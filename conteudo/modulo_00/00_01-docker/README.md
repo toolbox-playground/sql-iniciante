@@ -1,5 +1,6 @@
 # 🐳 Instalação do MySQL via Docker
 
+
 Este guia mostra como subir rapidamente uma instância do MySQL utilizando Docker, permitindo acesso externo e com permissões configuradas para o usuário `root`.
 
 ## ✅ Pré-requisitos
