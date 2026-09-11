@@ -57,6 +57,15 @@ CREATE TABLE IF NOT EXISTS treinadores_teste (
 -- 2. Inserção rápida apenas para validação
 INSERT INTO treinadores_teste (nome, status_teste) 
 VALUES ('Treinador Teste 1', 'Pendente');
+INSERT INTO treinadores_teste (nome, status_teste) 
+VALUES ('Treinador Teste 2', 'Pendente');
+
+SELECT * FROM treinadores_teste;
 
 -- 3. Exclusão definitiva da tabela teste
+DELETE FROM treinadores_teste WHERE ID = 2;
+
+DELETE FROM treinadores_teste;
+
 DROP TABLE IF EXISTS treinadores_teste;
+
