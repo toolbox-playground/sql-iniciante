@@ -29,8 +29,10 @@ ALTER TABLE treinador_meunome
 -- ADD vitorias INT DEFAULT 0: Cria uma coluna de número inteiro para contabilizar as vitórias (com valor padrão inicial de 0).
 -- ADD local_capturado VARCHAR(100): Cria uma coluna do tipo texto de até 100 caracteres para registrar a localização onde o Pokémon foi capturado.
 
+ALTER TABLE treinador_meunome ADD COLUMN `teste` VARCHAR(45) NULL AFTER `pokemon_principal_id`;
 ALTER TABLE treinador_thiago ADD COLUMN `teste` VARCHAR(45) NULL AFTER `pokemon_id`;
-ALTER TABLE treinador_thiago ADD INDEX `TESTE` (`pokemon` ASC), ADD UNIQUE INDEX (`pokemon`);
-ALTER TABLE treinador_thiago MODIFY ID TINYINT NOT NULL, CHANGE b c CHAR(20);
-ALTER TABLE treinador_thiago DROP COLUMN `teste`;
+ALTER TABLE treinador_meunome ADD COLUMN `pokemon` VARCHAR(45) NULL AFTER `pokemon_principal_id`;
+ALTER TABLE treinador_meunome ADD INDEX `TESTE` (`pokemon` ASC), ADD UNIQUE INDEX (`pokemon`);
+ALTER TABLE treinador_meunome MODIFY id_treinador TINYINT NOT NULL, CHANGE teste b CHAR(20);
+ALTER TABLE treinador_meunome DROP COLUMN `b`;
 
