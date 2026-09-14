@@ -12,3 +12,25 @@ CREATE TABLE treinador_meunome (
         ON UPDATE CASCADE
 );
 
+/*
+id_treinador INT AUTO_INCREMENT PRIMARY KEY: Identificador único para cada treinador.
+nome VARCHAR(100) NOT NULL: Nome do treinador (texto até 100 caracteres).
+cidade_natal VARCHAR(100): Cidade de origem do treinador.
+data_inicio DATE: Data em que o treinador iniciou sua jornada (formato YYYY-MM-DD).
+nivel INT DEFAULT 1: Nível ou experiência do treinador.
+pokemon_principal_id INT: Campo de relacionamento com o tipo de dado INT, exatamente o mesmo utilizado para o pokedex_number na tabela pokemon.
+CONSTRAINT fk_treinador_pokemon FOREIGN KEY...: Define a chave estrangeira garantindo a integridade referencial com a tabela pokemon.
+*/
+
+ALTER TABLE treinador_meunome
+    ADD vitorias INT DEFAULT 0,
+    ADD local_capturado VARCHAR(100);
+
+-- ADD vitorias INT DEFAULT 0: Cria uma coluna de número inteiro para contabilizar as vitórias (com valor padrão inicial de 0).
+-- ADD local_capturado VARCHAR(100): Cria uma coluna do tipo texto de até 100 caracteres para registrar a localização onde o Pokémon foi capturado.
+
+ALTER TABLE treinador_thiago ADD COLUMN `teste` VARCHAR(45) NULL AFTER `pokemon_id`;
+ALTER TABLE treinador_thiago ADD INDEX `TESTE` (`pokemon` ASC), ADD UNIQUE INDEX (`pokemon`);
+ALTER TABLE treinador_thiago MODIFY ID TINYINT NOT NULL, CHANGE b c CHAR(20);
+ALTER TABLE treinador_thiago DROP COLUMN `teste`;
+
